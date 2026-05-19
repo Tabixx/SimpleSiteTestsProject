@@ -3,15 +3,16 @@ import HomePage from "../page-objects/homePage"
 import CheckboxPage from "../page-objects/checkboxPage"
 import DropdownListPage from "../page-objects/dropdownListPage"
 import HoversPage from "../page-objects/hoversPage"
+import BasicAuthPage from  "../page-objects/basicAuthPage"
+
 
 describe('TestingSimpleSiteProject', () => {
     beforeEach(()=> {
         cy.visit('/')
     })
-    
-    it('test inputs', function () {
-        
-        const homePage = new HomePage();
+  const homePage = new HomePage();
+
+    it('Test Inputs', function () {
         homePage.clickInputsTab()
 
         const inputPage = new InputPage();
@@ -19,9 +20,7 @@ describe('TestingSimpleSiteProject', () => {
         inputPage.typeLettersIntoField()
     })
 
-    it('test checkboxes', function () {
-        
-        const homePage = new HomePage();
+    it('Test Checkboxes', function () {
         homePage.clickCheckboxTab()
 
         const checkboxPage = new CheckboxPage();
@@ -29,21 +28,28 @@ describe('TestingSimpleSiteProject', () => {
         checkboxPage.uncheckLastCheckbox()
     })
 
-    it('test dropdown list', function() {
-
-        const homePage = new HomePage();
+    it('Test Dropdown List', function() {
         homePage.clickDropdownListTab()
 
         const dropdownPage = new DropdownListPage();
         dropdownPage.chooseDropdownListFirstOption()
     })
 
-    it('test hover', function() {
-        
-        const homePage = new HomePage();
+    it('Test Hover', function() {
         homePage.clickHoversTab()
 
         const hoversPage = new HoversPage();
         hoversPage.hoverOverElement()
+    })
+
+    it('Test Basic Authentication', function () {
+        homePage.clickBasicAuthTab()
+
+        const basicAuthPage = new BasicAuthPage();
+        basicAuthPage.inputUsername()
+        basicAuthPage.inputPassword()
+        basicAuthPage.clickLogin()
+        basicAuthPage.verifyLoginSuccess()
+        basicAuthPage.clickReturnToMainPage()
     })
 })
