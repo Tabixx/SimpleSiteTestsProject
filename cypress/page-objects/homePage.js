@@ -5,6 +5,7 @@ const checkboxHeader = '#checkbox-header'
 const dropdownListHeader = '#dropdownlist-header'
 const hoversHeader = '#hovers-header'
 const basicAuthHeader = '#basicauth-header'
+const formHeader = '#form-header'
 
 class HomePage{
     clickInputsTab(){
@@ -21,6 +22,9 @@ class HomePage{
     }
     clickBasicAuthTab(){
         cy.get(basicAuthHeader).click()
+    }
+    clickFormTab(){
+        cy.get(formHeader).click()
     }
     visitPage(){
         const url = new Urls()

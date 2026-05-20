@@ -4,7 +4,7 @@ import CheckboxPage from "../page-objects/checkboxPage"
 import DropdownListPage from "../page-objects/dropdownListPage"
 import HoversPage from "../page-objects/hoversPage"
 import BasicAuthPage from  "../page-objects/basicAuthPage"
-
+import FormPage from "../page-objects/formPage"
 
 describe('TestingSimpleSiteProject', () => {
     beforeEach(()=> {
@@ -51,5 +51,15 @@ describe('TestingSimpleSiteProject', () => {
         basicAuthPage.clickLogin()
         basicAuthPage.verifyLoginSuccess()
         basicAuthPage.clickReturnToMainPage()
+    })
+
+    it('Test Form', function() {
+        homePage.clickFormTab()
+
+        const formPage = new FormPage();
+        formPage.inputFirstName()
+        formPage.inputLastName()
+        formPage.verifySuccess()
+        formPage.clickSubmit()
     })
 })
