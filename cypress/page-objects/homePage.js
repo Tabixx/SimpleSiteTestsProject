@@ -6,6 +6,8 @@ const dropdownListHeader = '#dropdownlist-header'
 const hoversHeader = '#hovers-header'
 const basicAuthHeader = '#basicauth-header'
 const formHeader = '#form-header'
+const keypressesHeader = '#keypresses-header'
+
 
 class HomePage{
     clickInputsTab(){
@@ -25,6 +27,9 @@ class HomePage{
     }
     clickFormTab(){
         cy.get(formHeader).click()
+    }
+    clickKeyPressesTab(){
+        cy.get(keypressesHeader).click()
     }
     visitPage(){
         const url = new Urls()

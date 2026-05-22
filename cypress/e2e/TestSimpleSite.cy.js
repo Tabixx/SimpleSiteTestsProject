@@ -5,6 +5,7 @@ import DropdownListPage from "../page-objects/dropdownListPage"
 import HoversPage from "../page-objects/hoversPage"
 import BasicAuthPage from  "../page-objects/basicAuthPage"
 import FormPage from "../page-objects/formPage"
+import KeyPressPage from "../page-objects/keyPressesPage"
 
 describe('TestingSimpleSiteProject', () => {
     beforeEach(()=> {
@@ -61,5 +62,14 @@ describe('TestingSimpleSiteProject', () => {
         formPage.inputLastName()
         formPage.verifySuccess()
         formPage.clickSubmit()
+    })
+
+    it('Test Key Presses', function() {
+        homePage.clickKeyPressesTab()
+
+        const keyPressesPage = new KeyPressPage();
+        keyPressesPage.typeLetterKey()
+        keyPressesPage.typeNumberKey()
+        keyPressesPage.typeSpecialKey()
     })
 })
