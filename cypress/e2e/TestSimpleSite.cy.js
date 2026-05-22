@@ -6,6 +6,7 @@ import HoversPage from "../page-objects/hoversPage"
 import BasicAuthPage from  "../page-objects/basicAuthPage"
 import FormPage from "../page-objects/formPage"
 import KeyPressPage from "../page-objects/keyPressesPage"
+import AddRemoveElementsPage from "../page-objects/elementAddRemovePage"
 
 describe('TestingSimpleSiteProject', () => {
     beforeEach(()=> {
@@ -71,5 +72,14 @@ describe('TestingSimpleSiteProject', () => {
         keyPressesPage.typeLetterKey()
         keyPressesPage.typeNumberKey()
         keyPressesPage.typeSpecialKey()
+    })
+
+    it('Test Add & Remove Element', function() {
+        homePage.clickAddRemoveElementsTab()
+
+        const elementAddRemovePage = new AddRemoveElementsPage();
+        elementAddRemovePage.addElements()
+        elementAddRemovePage.deleteElement()
+        elementAddRemovePage.deleteAllElements()
     })
 })

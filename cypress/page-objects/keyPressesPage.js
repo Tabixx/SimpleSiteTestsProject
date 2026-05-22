@@ -5,7 +5,6 @@ const keyPressResult ='#keyPressResult'
 const SpKey = randomSpecialKey()
 
 class KeyPressPage{
-
     typeLetterKey() {
         cy.get(keyPress).type(randomLetter)
         cy.get(keyPressResult).should('contain.text', `You entered: ${randomLetter.toUpperCase()}`)

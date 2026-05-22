@@ -7,7 +7,8 @@ const hoversHeader = '#hovers-header'
 const basicAuthHeader = '#basicauth-header'
 const formHeader = '#form-header'
 const keypressesHeader = '#keypresses-header'
-
+const elementsAddRemoveHeader = '#addremoveelements-header'
+const statusCodesHeader = '#statuscodes-header'
 
 class HomePage{
     clickInputsTab(){
@@ -30,6 +31,12 @@ class HomePage{
     }
     clickKeyPressesTab(){
         cy.get(keypressesHeader).click()
+    }
+    clickAddRemoveElementsTab(){
+        cy.get(elementsAddRemoveHeader).click()
+    }
+    clickStatusCodesTab(){
+        cy.get(statusCodesHeader).click()
     }
     visitPage(){
         const url = new Urls()

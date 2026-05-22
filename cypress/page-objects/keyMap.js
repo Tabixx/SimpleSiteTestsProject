@@ -3,7 +3,7 @@ import { faker } from '@faker-js/faker'
 const randomLetter = faker.string.alpha(1).toLowerCase()
 const randomNumber = faker.string.numeric(1)
 
-const specialKeys = ['{enter}', '{esc}', '{tab}', '{backspace}', '{del}', '{uparrow}', '{downarrow}', '{leftarrow}', '{rightarrow}']
+const specialKeys = ['{enter}', '{esc}', '{backspace}', '{del}', '{uparrow}', '{downarrow}', '{leftarrow}', '{rightarrow}']
 
 const KeyNames = (SpKey) => {
     const keyMap = {
