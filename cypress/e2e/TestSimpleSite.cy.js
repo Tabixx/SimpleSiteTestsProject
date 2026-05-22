@@ -7,6 +7,7 @@ import BasicAuthPage from  "../page-objects/basicAuthPage"
 import FormPage from "../page-objects/formPage"
 import KeyPressPage from "../page-objects/keyPressesPage"
 import AddRemoveElementsPage from "../page-objects/elementAddRemovePage"
+import StatusCodesPage from "../page-objects/statusCodesPage"
 
 describe('TestingSimpleSiteProject', () => {
     beforeEach(()=> {
@@ -81,5 +82,15 @@ describe('TestingSimpleSiteProject', () => {
         elementAddRemovePage.addElements()
         elementAddRemovePage.deleteElement()
         elementAddRemovePage.deleteAllElements()
+    })
+
+    it('Test Status Codes', function () {
+        homePage.clickStatusCodesTab()
+
+        const statusCodesPage = new StatusCodesPage();
+        statusCodesPage.checkStatus200()
+        statusCodesPage.checkStatus305()
+        statusCodesPage.checkStatus404()
+        statusCodesPage.checkStatus500()
     })
 })
