@@ -9,6 +9,8 @@ const formHeader = '#form-header'
 const keypressesHeader = '#keypresses-header'
 const elementsAddRemoveHeader = '#addremoveelements-header'
 const statusCodesHeader = '#statuscodes-header'
+const iframeHeader = '#iframe-header'
+const datePickerHeader = '#datepicker-header'
 
 class HomePage{
     clickInputsTab(){
@@ -37,6 +39,12 @@ class HomePage{
     }
     clickStatusCodesTab(){
         cy.get(statusCodesHeader).click()
+    }
+    clickIFrameTab(){
+        cy.get(iframeHeader).click()
+    }
+    clickDatePickerTab(){
+        cy.get(datePickerHeader).click()
     }
     visitPage(){
         const url = new Urls()

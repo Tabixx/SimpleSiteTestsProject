@@ -8,6 +8,8 @@ import FormPage from "../page-objects/formPage"
 import KeyPressPage from "../page-objects/keyPressesPage"
 import AddRemoveElementsPage from "../page-objects/elementAddRemovePage"
 import StatusCodesPage from "../page-objects/statusCodesPage"
+import iFramePage from "../page-objects/iFramePage"
+import DatePickerPage from "../page-objects/datePickerPage"
 
 describe('TestingSimpleSiteProject', () => {
     beforeEach(()=> {
@@ -92,5 +94,22 @@ describe('TestingSimpleSiteProject', () => {
         statusCodesPage.checkStatus305()
         statusCodesPage.checkStatus404()
         statusCodesPage.checkStatus500()
+    })
+
+    it('Test iFrames', function () {
+        homePage.clickIFrameTab()
+
+        const iFrame = new iFramePage();
+        iFrame.iFrameButton1Click()
+        iFrame.iFrameButton2Click()
+    })
+
+    it('Test Date Picker', function() {
+        homePage.clickDatePickerTab()
+
+        const datePickerPage = new DatePickerPage();
+        datePickerPage.selectValidDate()
+        datePickerPage.selectDateTooEarly()
+        datePickerPage.selectDateTooLate()
     })
 })
