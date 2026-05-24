@@ -10,6 +10,7 @@ import AddRemoveElementsPage from "../page-objects/elementAddRemovePage"
 import StatusCodesPage from "../page-objects/statusCodesPage"
 import iFramePage from "../page-objects/iFramePage"
 import DatePickerPage from "../page-objects/datePickerPage"
+import DragAndDropPage from "../page-objects/dragAndDropPage"
 
 describe('TestingSimpleSiteProject', () => {
     beforeEach(()=> {
@@ -111,5 +112,13 @@ describe('TestingSimpleSiteProject', () => {
         datePickerPage.selectValidDate()
         datePickerPage.selectDateTooEarly()
         datePickerPage.selectDateTooLate()
+    })
+
+    it('Test Drag & Drop', function (){
+        homePage.clickDragAndDropTab()
+
+        const dragAndDropPage = new DragAndDropPage()
+        dragAndDropPage.dragColumnA()
+        dragAndDropPage.dragColumnB()
     })
 })
